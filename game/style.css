@@ -1,0 +1,176 @@
+/* Umbra — page and HUD styling. Dark archive tones, one serif display face
+   (Georgia, a system font: nothing is fetched), generous spacing. */
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: #0d0b12;
+  color: #e8e4da;
+  font-family: Georgia, 'Times New Roman', serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+#wrap {
+  width: 1000px;
+  max-width: 100vw;
+  padding: 14px 20px 22px;
+}
+
+#topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 4px 2px 10px;
+  border-bottom: 1px solid #2c2636;
+}
+
+.brand {
+  font-size: 22px;
+  letter-spacing: 0.35em;
+  font-weight: bold;
+  color: #e8b64c;
+}
+
+.brand span {
+  font-size: 13px;
+  letter-spacing: 0.05em;
+  color: #9a93a8;
+  font-weight: normal;
+  font-style: italic;
+}
+
+.hud-right { font-size: 20px; color: #e8e4da; font-variant-numeric: tabular-nums; }
+
+#hud {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  padding: 10px 0;
+}
+
+.hud-cell {
+  background: #171420;
+  border: 1px solid #2c2636;
+  border-radius: 8px;
+  padding: 7px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 110px;
+}
+
+.hud-cell.wide { flex: 1 1 260px; }
+
+.hud-label {
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #8d86a0;
+}
+
+#hud-level, #hud-objective, #hud-pebbles, #hud-seals { font-size: 14px; }
+
+.alert-badge {
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 0.12em;
+}
+
+.alert-calm { color: #58d68d; }
+.alert-wary { color: #e8b64c; }
+.alert-suspicious { color: #ff9a3c; }
+.alert-alarm { color: #ff5040; }
+
+.meter {
+  display: block;
+  height: 8px;
+  background: #241f2e;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-top: 3px;
+}
+
+#hud-meter-fill {
+  display: block;
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #e8b64c, #ff5040);
+  transition: width 0.15s linear;
+}
+
+.meter-label { font-size: 12px; color: #b9b2c6; font-style: italic; }
+
+#stage {
+  position: relative;
+  width: 960px;
+  max-width: 100%;
+  margin: 0 auto;
+  border: 1px solid #3a3247;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.6);
+}
+
+#game { display: block; width: 100%; height: auto; background: #211d24; cursor: crosshair; }
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 8, 16, 0.82);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 30px 60px;
+  gap: 14px;
+}
+
+.overlay.hidden { display: none; }
+
+.overlay h1 {
+  font-size: 64px;
+  letter-spacing: 0.4em;
+  color: #e8b64c;
+  text-shadow: 0 0 30px rgba(232, 182, 76, 0.4);
+}
+
+.overlay h2 { font-size: 40px; letter-spacing: 0.12em; color: #e8b64c; }
+
+.tagline { font-size: 17px; line-height: 1.55; color: #d5cfdd; max-width: 560px; }
+.rules { font-size: 15px; line-height: 1.6; color: #b9b2c6; max-width: 600px; }
+.controls { font-size: 13px; color: #8d86a0; }
+
+.rank { font-size: 20px; letter-spacing: 0.1em; }
+.rank span { color: #58d68d; font-weight: bold; letter-spacing: 0.25em; }
+
+.big-btn {
+  font-family: Georgia, serif;
+  font-size: 18px;
+  letter-spacing: 0.06em;
+  background: #e8b64c;
+  color: #1a1408;
+  border: none;
+  border-radius: 8px;
+  padding: 13px 30px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.big-btn:hover { background: #f2c95e; }
+
+#hud-hint {
+  text-align: center;
+  padding: 12px 4px 0;
+  font-size: 13px;
+  color: #8d86a0;
+  font-style: italic;
+}
+
+@media (max-width: 700px) {
+  .overlay h1 { font-size: 40px; }
+  .overlay { padding: 20px; }
+  .brand span { display: none; }
+}

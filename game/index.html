@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Umbra — a stealth game</title>
+<meta name="description" content="Umbra: slip past the lantern wardens, steal the Ember Codex, and reach the exit unseen. A top-down stealth game that runs entirely offline.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="wrap">
+  <header id="topbar">
+    <div class="brand">UMBRA <span>— steal the Codex, leave unseen</span></div>
+    <div class="hud-right"><span id="hud-timer">0:00</span></div>
+  </header>
+
+  <div id="hud">
+    <div class="hud-cell"><span class="hud-label">Room</span><span id="hud-level">I — The Lantern Archive</span></div>
+    <div class="hud-cell wide"><span class="hud-label">Objective</span><span id="hud-objective">Take the Ember Codex</span></div>
+    <div class="hud-cell"><span class="hud-label">Alarm</span><span id="hud-alert" class="alert-badge alert-calm">CALM</span></div>
+    <div class="hud-cell"><span class="hud-label">Seen meter</span>
+      <span class="meter"><span id="hud-meter-fill"></span></span>
+      <span id="hud-meter-label" class="meter-label">Unseen</span>
+    </div>
+    <div class="hud-cell"><span class="hud-label">Kit</span><span id="hud-pebbles">Pebbles: 3 (click to throw)</span></div>
+    <div class="hud-cell"><span class="hud-label">Loot</span><span id="hud-seals">Seals 0/0&nbsp;&nbsp; Codex —</span></div>
+  </div>
+
+  <div id="stage">
+    <canvas id="game"></canvas>
+
+    <div id="ov-title" class="overlay">
+      <h1>UMBRA</h1>
+      <p class="tagline">Night in the Lantern Archive. The Ember Codex glows on its plinth,
+      the wardens walk their rounds, and every lantern is watching.</p>
+      <p class="rules">Slip past the wardens — their amber cones are their sight.
+      Hide in hedges and shadow, crouch to shrink their range, run only when
+      no one is near. Throw a pebble (click) to pull a guard away.
+      Take the Codex, then reach the green exit door unseen.</p>
+      <button id="btn-start" class="big-btn">Begin the heist</button>
+      <p class="controls">WASD / arrows move &nbsp;·&nbsp; Shift run (loud) &nbsp;·&nbsp; Ctrl / C crouch
+      &nbsp;·&nbsp; Click throws a pebble &nbsp;·&nbsp; P pause &nbsp;·&nbsp; M mute</p>
+    </div>
+
+    <div id="ov-pause" class="overlay hidden">
+      <h2>Paused</h2>
+      <p class="tagline">The wardens wait. So does the Codex.</p>
+      <button id="btn-resume" class="big-btn">Resume</button>
+    </div>
+
+    <div id="ov-caught" class="overlay hidden">
+      <h2>Caught</h2>
+      <p class="tagline">A warden's hand closes on your shoulder. The archive keeps its Codex — this time.</p>
+      <button id="btn-retry" class="big-btn">Try the room again (R)</button>
+    </div>
+
+    <div id="ov-clear" class="overlay hidden">
+      <h2>Room cleared</h2>
+      <p id="ov-clear-text" class="tagline"></p>
+      <button id="btn-next" class="big-btn">Sneak into the next room</button>
+    </div>
+
+    <div id="ov-win" class="overlay hidden">
+      <h2>The Codex is yours</h2>
+      <p class="rank">Rank: <span id="ov-win-rank">GHOST</span></p>
+      <p id="ov-win-text" class="tagline"></p>
+      <button id="btn-again" class="big-btn">Steal it again</button>
+    </div>
+  </div>
+
+  <footer id="hud-hint">WASD / arrows move · Shift run (loud) · Ctrl / C crouch · Click throws a pebble · P pause · M mute</footer>
+</div>
+
+<script src="src/config.js"></script>
+<script src="src/audio.js"></script>
+<script src="src/vision.js"></script>
+<script src="src/level.js"></script>
+<script src="src/guards.js"></script>
+<script src="src/player.js"></script>
+<script src="src/render.js"></script>
+<script src="src/main.js"></script>
+</body>
+</html>
