@@ -1,8 +1,13 @@
 # Umbra
 
+[![make.fun · best-stealth-game-20261121-1759](https://make.fun/badge/best-stealth-game-20261121-1759.svg)](https://make.fun/bounty/best-stealth-game-20261121-1759?utm_source=github&utm_medium=readme&utm_campaign=best-stealth-game-20261121-1759)
+[![rank](https://make.fun/badge/best-stealth-game-20261121-1759/bshemphang/umbra/rank.svg)](https://make.fun/bounty/best-stealth-game-20261121-1759/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=best-stealth-game-20261121-1759)
+[![reward](https://make.fun/badge/best-stealth-game-20261121-1759/bshemphang/umbra/reward.svg)](https://make.fun/bounty/best-stealth-game-20261121-1759?utm_source=github&utm_medium=readme&utm_campaign=best-stealth-game-20261121-1759)
+
 A top-down stealth game that runs entirely offline in a desktop browser.
 You are Wren, a shadow-thief in the moonlit Lantern Archive. Slip past the
 lantern wardens, lift the Ember Codex, and reach the green exit door unseen.
+Built for the [make.fun bounty](https://make.fun/bounty/best-stealth-game-20261121-1759).
 
 ## How to play
 
